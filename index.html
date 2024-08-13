@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/vite.svg"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Vite + TS</title>
+  </head>
+  <body>
+    <header>
+      <ul id="cart-list">
+        <template id="cart-template">
+          <li class="grid grid-cols-3 p-3 border">
+            <p
+              class="truncate"
+              data-cart="title"
+            >
+              titulo del producto
+            </p>
+            <div>
+              <button
+                class="bg-blue-500 text-white p-2 rounded-md"
+                data-cart="increment"
+              >
+                +
+              </button>
+              <span
+                class="w-7 inline-block text-center"
+                data-cart="quantity"
+                >2</span
+              >
+              <button
+                class="bg-red-500 text-white p-2 rounded-md"
+                data-cart="decrement"
+              >
+                -
+              </button>
+            </div>
+            <p
+              class="text-right"
+              data-cart="price"
+            >
+              $500
+            </p>
+          </li>
+        </template>
+      </ul>
+      <p
+        class="text-right"
+        id="cart-total"
+      >
+        Total: $5000
+      </p>
+    </header>
+
+    <h1 class="text-center my-3 text-3xl">Products</h1>
+    <main
+      class="grid grid-cols-2 gap-3"
+      id="product-list"
+    >
+      <template id="product-template">
+        <article class="border rounded-md">
+          <img
+            src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+            alt=""
+            class="w-full h-[200px] object-cover"
+          />
+          <div class="p-3">
+            <h2 class="truncate">Lorem ipsum dolor</h2>
+            <p>Price: <span>$10.00</span></p>
+            <button class="bg-blue-500 text-white rounded-md px-4 py-2">
+              Add to cart
+            </button>
+          </div>
+        </article>
+      </template>
+    </main>
+    <script
+      type="module"
+      src="/src/main.ts"
+    ></script>
+  </body>
+</html>
